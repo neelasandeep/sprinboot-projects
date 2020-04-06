@@ -1,0 +1,10 @@
+package com.example.demo;
+
+public class Alien {
+
+	public void code() {
+		System.out.println("i am coding");
+		
+	}
+
+}

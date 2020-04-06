@@ -1,0 +1,31 @@
+package com.example.demo;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.dao.AlienRepo;
+import com.example.demo.model.Alien;
+
+@RestController
+public class AlienController {
+	
+	@Autowired
+	AlienRepo repo;
+	
+	@GetMapping("aliens")
+	public List<Alien> getAliens() {
+		
+		
+		return repo.findAll();
+	}
+	@GetMapping("alien/{aid}")
+	public List<Alien> getAlien(@Pathvairable int aid) {
+		
+		
+		return repo.findAll();
+	}
+
+}

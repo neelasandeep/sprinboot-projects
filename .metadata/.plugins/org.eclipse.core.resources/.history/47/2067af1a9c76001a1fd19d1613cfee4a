@@ -1,0 +1,7 @@
+package com.example.demo.model;
+
+public class User {
+private int uid;
+private String uname;
+private String password;
+}

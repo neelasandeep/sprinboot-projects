@@ -1,0 +1,30 @@
+package com.example.demo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.demo.model.Alien;
+
+@Controller
+public class MainController {
+	
+	@ModelAttribute
+	public void modeldata(Model m ) {
+		m.addAttributes("name","Aliens");
+		
+	}
+	@RequestMapping("/")
+	public String show() {
+		return "index";
+	}
+	
+	@PostMapping("addalien")
+	public String showaddform(@ModelAttribute("alien") Alien a) {
+		
+		return "result";
+	}
+
+}
